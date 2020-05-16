@@ -36,15 +36,15 @@ def solve(board):
 
 
 def valid(board, n, pos):
-    # verificam linia
+    # check line
     for i in range(len(board[0])):
         if board[pos[0]][i] == n and pos[1] != i:
             return False
-    # verificam coloana
+    # check column
     for i in range(len(board[0])):
         if board[i][pos[1]] == n and pos[0] != i:
             return False
-    # verificam un patrat 3x3
+    # check 3x3 square
     box_x = pos[1] // 3
     box_y = pos[0] // 3
     for i in range(box_y * 3, box_y * 3 + 3):
@@ -54,7 +54,7 @@ def valid(board, n, pos):
     return True
 
 
-def afisare_board(board):
+def print_board(board):
     for i in range(len(board)):
         if i % 3 == 0 and i != 0:
             print("- - - - - - - - -")
@@ -76,7 +76,7 @@ def find_empty(board):
     return None
 
 
-afisare_board(board2)
+print_board(board2)
 solve(board2)
 print("                                ")
-afisare_board(board2)
+print_board(board2)
